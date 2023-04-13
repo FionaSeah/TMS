@@ -11,6 +11,7 @@ const settingsCard = (
     <h3
       style={{
         fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "18px",
       }}
     >
       Settings
@@ -26,6 +27,7 @@ const kanBanCard = (
     <h3
       style={{
         fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "18px",
       }}
     >
       Kanban Board
@@ -41,6 +43,7 @@ const manageEmployeeCard = (
     <h3
       style={{
         fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "18px",
       }}
     >
       View All Employees

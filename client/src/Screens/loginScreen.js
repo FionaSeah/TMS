@@ -23,22 +23,7 @@ function LoginScreen() {
         >
           Task Management System
         </h1>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "flex-end",
-            marginBottom: "40px",
-          }}
-        >
-          <PersonIcon sx={{ color: "action.active", mr: 2, my: 2 }} />
-          <TextField
-            autoFocus
-            fullWidth
-            id="usernameInput"
-            label="Username"
-            variant="outlined"
-          />
-        </Box>
+        sx={{ color: "action.active", mr: 2, my: 2 }}sx={{ color: "action.active", mr: 2, my: 2 }}
         <Box
           sx={{
             display: "flex",

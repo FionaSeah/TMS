@@ -1,14 +1,14 @@
 import * as React from "react";
 import {
-  OutlinedInput,
-  InputLabel,
-  FormControl,
   InputAdornment,
   IconButton,
   Button,
+  TextField,
+  Box,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import LockResetIcon from "@mui/icons-material/LockReset";
+import HttpsIcon from "@mui/icons-material/Https";
+import LockClockIcon from "@mui/icons-material/LockClock";
 
 function UpdatePasswordScreen() {
   const [showOldPassword, setShowOldPassword] = React.useState(false);
@@ -40,80 +40,101 @@ function UpdatePasswordScreen() {
 
   return (
     <div style={{ fontFamily: "Arial, Helvetica, sans-serif", margin: "20px" }}>
-      <h2>Update Password</h2>
+      <h2 style={{ textAlign: "center" }}>Update Password</h2>
       <hr />
-      <FormControl
-        sx={{ width: "100%", marginBottom: "20px", marginTop: "10px" }}
-        variant="outlined"
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-end",
+          marginBottom: "20px",
+          marginTop: "20px",
+        }}
       >
-        <InputLabel htmlFor="oldPassword">Old Password</InputLabel>
-        <OutlinedInput
-          id="oldPassword"
-          autoFocus
+        <HttpsIcon sx={{ color: "action.active", mr: 2, my: 2 }} />
+        <TextField
+          fullWidth
+          id="oldPasswordInput"
+          label="Old Password"
+          variant="outlined"
           type={showOldPassword ? "text" : "password"}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowOldPassword}
-                onMouseDown={handleMouseDownOldPassword}
-                edge="end"
-              >
-                {showOldPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-          label="Password"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowOldPassword}
+                  onMouseDown={handleMouseDownOldPassword}
+                  edge="end"
+                >
+                  {showOldPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
-      </FormControl>
-      <FormControl
-        sx={{ width: "100%", marginBottom: "20px" }}
-        variant="outlined"
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-end",
+          marginBottom: "20px",
+        }}
       >
-        <InputLabel htmlFor="newPassword">New Password</InputLabel>
-        <OutlinedInput
-          id="newPassword"
+        <HttpsIcon sx={{ color: "action.active", mr: 2, my: 2 }} />
+        <TextField
+          fullWidth
+          id="newPasswordInput"
+          label="New Password"
+          variant="outlined"
           type={showNewPassword ? "text" : "password"}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowNewPassword}
-                onMouseDown={handleMouseDownNewPassword}
-                edge="end"
-              >
-                {showNewPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-          label="Password"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowNewPassword}
+                  onMouseDown={handleMouseDownNewPassword}
+                  edge="end"
+                >
+                  {showNewPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
-      </FormControl>
-      <FormControl
-        sx={{ width: "100%", marginBottom: "20px" }}
-        variant="outlined"
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-end",
+          marginBottom: "30px",
+        }}
       >
-        <InputLabel htmlFor="newPassword">Confirm Password</InputLabel>
-        <OutlinedInput
-          id="confirmPassword"
+        <HttpsIcon sx={{ color: "action.active", mr: 2, my: 2 }} />
+        <TextField
+          fullWidth
+          id="passwordInput"
+          label="Confirm New Password"
+          variant="outlined"
           type={showConfirmPassword ? "text" : "password"}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowConfirmPassword}
-                onMouseDown={handleMouseDownConfirmPassword}
-                edge="end"
-              >
-                {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-          label="Password"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowConfirmPassword}
+                  onMouseDown={handleMouseDownConfirmPassword}
+                  edge="end"
+                >
+                  {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
-      </FormControl>
+      </Box>
       <Button variant="contained" style={{ width: "100%", height: "50px" }}>
-        <LockResetIcon style={{ paddingRight: "5px" }} />
+        <LockClockIcon style={{ paddingRight: "5px" }} />
         Update Password
       </Button>
     </div>
