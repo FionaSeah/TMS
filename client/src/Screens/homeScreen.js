@@ -2,6 +2,7 @@ import { Box, Card, Container, Stack } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import SettingsIcon from "@mui/icons-material/Settings";
+import NavigationBar from "../Components/navigationBar";
 
 const settingsCard = (
   <div>
@@ -46,7 +47,7 @@ const manageEmployeeCard = (
         fontSize: "18px",
       }}
     >
-      View All Employees
+      Employees' Management
     </h3>
   </div>
 );
@@ -54,11 +55,12 @@ const manageEmployeeCard = (
 function HomeScreen() {
   return (
     <div>
+      <NavigationBar />
       <Box sx={{ textAlign: "center" }}>
         <h1
           style={{
             fontFamily: "Arial, Helvetica, sans-serif",
-            marginBottom: "50px",
+            marginBottom: "100px",
           }}
         >
           Hello Name
@@ -66,17 +68,6 @@ function HomeScreen() {
       </Box>
       <Container>
         <Stack spacing={2} direction="row">
-          <Card
-            variant="outlined"
-            style={{
-              padding: "10px",
-              textAlign: "center",
-              flex: 1,
-              cursor: "pointer",
-            }}
-          >
-            {settingsCard}
-          </Card>
           <Card
             variant="outlined"
             style={{
@@ -98,6 +89,17 @@ function HomeScreen() {
             }}
           >
             {manageEmployeeCard}
+          </Card>
+          <Card
+            variant="outlined"
+            style={{
+              padding: "10px",
+              textAlign: "center",
+              flex: 1,
+              cursor: "pointer",
+            }}
+          >
+            {settingsCard}
           </Card>
         </Stack>
       </Container>
